@@ -1,0 +1,111 @@
+:root {
+    --text-color: #000000;
+    --box-shadow: #ffffff25;
+    --hr-color: #000000;
+    --background: #bebebe;
+    --text-size: 18px;
+}
+
+.container {
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+.menu {
+    width: flex;
+    height: flex;
+
+    margin-left: 20px;
+
+    border-radius: 10px;
+}
+
+.table {
+    overflow: auto;
+
+    background-color: var(--box-shadow);
+    border-radius: 10px;
+}
+
+.name{
+    text-align: center;
+}
+
+.name p{
+    font-size: 22px;
+    padding: 20px 20px 20px 20px;
+}
+
+.row {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.row p {
+    font-size: 17px;
+}
+
+.table hr {
+    border-color: var(--hr-color);
+}
+
+.row hr{
+    height: 50px;
+}
+
+.column{
+    width: 11vw;
+    min-width: 180px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.column-end{
+    display: flex;
+    vertical-align: middle;
+    flex-direction: row-reverse;
+}
+
+.row button{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.menu-block a{
+    width: fit-content;
+}
+
+/* table-adaptive */
+@media screen and (max-width: 1450px) {
+    .row{
+        flex-direction: column;
+        align-items: center;
+        margin-left: 50px;
+    }
+
+    .column{
+        display: flex;
+        margin-bottom: 5px;
+        text-align: left;
+    }
+
+    .column-end{
+        display: flex;
+    }
+
+    .row hr{
+        display: none;
+        border-color: var(--hr-color);
+        height: 8px;
+    }
+}

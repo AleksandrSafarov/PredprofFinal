@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Index{% endblock %}
+
+{% block extraheader %}
+<link type="text/css" href="{% static 'main/css/table.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="ui">
+    <div class="table" id="table">
+        {% for route in allroutes %}
+        <div class="name">
+			<p>Маршрут  {{route.6}}</p>
+
+		</div>
+        <div class="route">
+            <div class="row">
+                <div class="column">
+                    <h3 class="item"> Общая информация </h3>
+                </div>
+                <hr>
+                <div class="column">
+                    <p class="item"> Стоимость {{ route.5 }}</p>
+                </div>
+                <hr>
+                <div class="column">
+                    <p class="item"> Топливо {{ route.1 }}</p>
+                </div>
+                <hr>
+                <div class="column">
+                    <p class="item"> Кол-во дней {{ route.0 }}</p>
+                </div>
+
+            </div>
+        </div>
+        <div class="route">
+            {% for i in route.3%}
+            <hr>
+            <div class="row">
+                <div class="column">
+                    <h3 class="item"> Номер точки {{i.7}}</h3>
+                </div>
+                <hr>
+                <div class="column">
+                    <p class="item"> Кол-во SH: {{ i.3 }}</p>
+                </div>
+                <hr>
+                <div class="column">
+                    <p class="item"> Топливо: {{ i.1 }}</p>
+                </div>
+                <hr>
+                <div class="column">
+                    <p class="item"> Энергия: {{ i.2 }}</p>
+                </div>
+                <hr>
+                <div class="column">
+                    <p class="item"> Кислород: {{i.4}}</p>
+                </div>
+                <hr>
+                <div class="column">
+                    <p class="item"> Расстояние: {{i.0}}</p>
+                </div>
+                <hr>
+                <div class="column">
+                    <p class="item"> Двигатель: {{i.5}}%</p>
+                    <p class="item"> Теплица: {{i.6}}%</p>
+                </div>
+            </div>
+            {%endfor%}
+        </div>
+        {%endfor%}
+	</div>
+</div>
+{% endblock %}
